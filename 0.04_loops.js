@@ -88,22 +88,6 @@ console.log(capSN);
 
 
 
-function capitalize(studentName){
-  var newName = "";
-  for ( var l in studentName) {
-    if (l == 0){
-      console.log(typeof(l))
-      newName = studentName[l].toUpperCase();
-    }else {
-      newName+= studentName[l];
-    }
-  	
-  }
-  console.log(newName)
-}
-
-
-capitalize("jay")
 
 
 
