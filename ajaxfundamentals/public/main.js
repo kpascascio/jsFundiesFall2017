@@ -16,7 +16,7 @@ $(document).ready(function(){
 		})
 	}
 
-	// if(!localStorage.getItem('planetsW')){
+	if(!localStorage.getItem('wookie')){
 		$.ajax({
 			type: 'GET',
 			url: 'http://swapi.co/api/planets/?format=wookiee',
@@ -25,13 +25,10 @@ $(document).ready(function(){
 				planets : []
 			}
 			planets.results.forEach(function(p){
-				console.log(p)
-				// $("#planets").append('<tr><td>'+ p.name + '</td></tr>')
 				planetsObj.planets.push(p.name)
 			})
-			// localStorage.setItem('planets', JSON.stringify(planetsObj))
 		})
-	// }
+	}
 
 	if(!localStorage.getItem('starships')){
 		$.ajax({
@@ -77,7 +74,7 @@ $(document).ready(function(){
 				localStorage.setItem('wookies', JSON.stringify(wookieObj))
 			})
 		}
-	}// kenn is so cute
+	}
 	
 	let clicker = false
 	$(wookie).on('click',function(){
@@ -105,20 +102,20 @@ $(document).ready(function(){
 
 		let search = $(searchRes).val();
 		$(searchRes).val("");
-		
 		$.ajax({
 			type: 'GET',
 			url: 'https://swapi.co/api/people/?search=' + search
 		}).done(function(data){
 			$("#searchResult").html("")
 			for (let d in data.results[0]){
-				if(d == "homeworld")
+				console.log(d)
+				if(d == "homeworld") {
 					break;
+				}
 				let dataName ='<h3 class="searchRe">' + d +':</h3>'
 				$(searchResult).append(dataName + "<p>" + data.results[0][d]	 + "</p>")
 			}
-			data.results[0].films.forEach(function(film){
-			});
+			
 		})
 	})
 

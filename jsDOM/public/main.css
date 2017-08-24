@@ -1,11 +1,7 @@
-.box {
-	height: 30em; 
-	width: 50%;
-	background-color: #e5e5e5;
-	padding: 20px; 
-	border-radius: 10px;
+table{
+	border-radius: 5px;
 }
 
-#friendsList {
-	list-style: none;
+.searchRe {
+	text-transform: capitalize; 
 }
