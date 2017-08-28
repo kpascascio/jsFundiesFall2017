@@ -1,0 +1,8 @@
+#loginBox {
+	height: 30em;
+	width: 30em;
+	background-color: #e5e5e5;
+	border: 1px solid black;
+	margin-top: 7em;
+	padding: 10px;
+}
