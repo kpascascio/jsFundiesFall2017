@@ -3,7 +3,7 @@ $(document).ready(function(){
 	if(!localStorage.getItem('planets')){
 		$.ajax({
 			type: 'GET',
-			url: 'http://swapi.co/api/planets/',
+			url: 'https://swapi.co/api/planets/',
 		}).done(function(planets){
 			let planetsObj = {
 				planets : []
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	if(!localStorage.getItem('wookie')){
 		$.ajax({
 			type: 'GET',
-			url: 'http://swapi.co/api/planets/?format=wookiee',
+			url: 'https://swapi.co/api/planets/?format=wookiee',
 		}).done(function(planets){
 			let planetsObj = {
 				planets : []
@@ -52,7 +52,7 @@ $(document).ready(function(){
 		}
 		$.ajax({
 			type: 'GET',
-			url: 'http://swapi.co/api/films/',
+			url: 'https://swapi.co/api/films/',
 		}).done(function(films){
 			films.results.forEach(function(p){
 				movieObj.movies.push(p.title);
@@ -68,7 +68,7 @@ $(document).ready(function(){
 		for(let i = 1; i < 11; i++){
 			$.ajax({
 				type: 'GET',
-				url: 'http://swapi.co/api/planets/'+i+'/?format=wookiee',
+				url: 'https://swapi.co/api/planets/'+i+'/?format=wookiee',
 			}).done(function(data){
 				wookieObj.wookies.push(data.whrascwo)
 				localStorage.setItem('wookies', JSON.stringify(wookieObj))
@@ -108,7 +108,6 @@ $(document).ready(function(){
 		}).done(function(data){
 			$("#searchResult").html("")
 			for (let d in data.results[0]){
-				console.log(d)
 				if(d == "homeworld") {
 					break;
 				}
